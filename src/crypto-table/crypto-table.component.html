@@ -1,0 +1,36 @@
+<h1 class="bg-table text-center text-light">Live top 100 Crypto Currencies table</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="mx-auto">
+                <table class="table  table-striped table-hover text-light">
+                        <thead> 
+                            <tr class="p-2">
+                                <th class="pl-1">#Rank</th>
+                                <th class="pl-5">Name</th>
+                                <th class="pl-3">Market Cap (USD)</th>
+                                <th class="pl-5">Price (USD)</th>
+                                <th class="pl-5">Volume (24h)</th>
+                                <th class="pl-5">Change (1h)</th>
+                               
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr *ngFor="let items of mydata" class="p-2" [class.positive]="items.quotes.USD.percent_change_1h >= 0 " [class.negative]="items.quotes.USD.percent_change_1h < 0 ">
+                                <td class="pl-2">{{items.rank }}</td>
+                                <td class="pl-5">{{items.name }}</td>
+                                <td class="pl-2">{{items.quotes.USD.market_cap | currency }}</td>
+                                <td class="pl-5">{{items.quotes.USD.price | currency}}</td>
+                                <td class="pl-5">{{items.quotes.USD.volume_24h }}</td>
+                                <td class="pl-5">{{items.quotes.USD.percent_change_1h *.01 | percent }}</td>
+                            </tr>
+                        </tbody>
+                        
+                        </table>
+        </div>
+           
+    </div>
+   
+</div>
+

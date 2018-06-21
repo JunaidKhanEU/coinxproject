@@ -1,0 +1,13 @@
+
+<div class="container text-center mt-5">
+<div class="navbar-brand brand"> <span class="display-4">Coin</span> <i class="fa fa-xing fa-3x" aria-hidden="true"></i> <small class="text-light">Moving with future</small></div>
+<hr>
+    <h1 class="text-light">
+        Top Best Performing 100 Crypto Currencies | Bitcoin Price 
+    </h1>
+    <hr>
+    <h4 class="text-light">Market Cap : <span class="brand">{{bitcoinClassData.total_market_cap_available_supply_usd | currency}}</span> | 24h Vol. <span class="brand"> {{bitcoinClassData.total_volume_usd | currency}}</span> | BTC Dominance: <span class="brand">{{bitcoinClassData.bitcoin_percentage_of_market_cap * 0.01| percent:'1.1-2'}}
+    </span> </h4>
+</div>
+
+<app-crypto></app-crypto>
